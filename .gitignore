@@ -81,3 +81,5 @@ Thumbs.db
 *.bak
 *.swp
 *:Zone.Identifier
+
+nginxof.conf

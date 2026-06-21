@@ -1,0 +1,82 @@
+{% comment %}This template is used by cms MessageCreateSerializer to send
+incoming messages via email.{% endcomment %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ section }}</title>
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f6f8;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+      .header {
+        padding: 20px 24px;
+        background: #0a4275;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+      .header img {
+        height: 40px;
+        object-fit: contain;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 18px;
+      }
+      .content {
+        padding: 24px;
+        color: #1f2937;
+      }
+      .content p {
+        margin: 0 0 16px;
+        line-height: 1.6;
+      }
+      .footer {
+        padding: 16px 24px;
+        background: #f4f6f8;
+        font-size: 13px;
+        color: #6b7280;
+      }
+      .footer a {
+        color: #0a4275;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        {% if logo %}
+        <img src="{{ logo }}" alt="Logo" />
+        {% endif %}
+        <h1>{{ section }}</h1>
+      </div>
+      <div class="content">
+        <p>Olá {{ name }},</p>
+        <p>{{ message|linebreaksbr }}</p>
+        <p><strong>De:</strong> {{ email }}</p>
+      </div>
+      <div class="footer">
+        <p>Se você recebeu este e-mail por engano, por favor, ignore-o.</p>
+        <p>&copy; {{ "now"|date:"Y" }} {{ section }}</p>
+      </div>
+    </div>
+  </body>
+</html>

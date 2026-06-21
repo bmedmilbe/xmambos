@@ -1,0 +1,427 @@
+[
+  {
+    "model": "teladoshi.expedition",
+    "pk": 1,
+    "fields": {
+      "vendor": 1,
+      "price": "45.00",
+      "is_active": true,
+      "slug": "emanuel-santos",
+      "badge_tags": "TREKKING",
+      "name_en": "Emanuel Santos",
+      "name_pt": "Emanuel Santos",
+      "name_fr": "Emanuel Santos",
+      "description_en": "Expert in Obô National Park endemic species and historical plantation trails.",
+      "description_pt": "Especialista em espécies endémicas do Parque Nacional do Obô e trilhos históricos de plantações.",
+      "description_fr": "Expert des espèces endémiques du parc national d'Obô et des sentiers historiques des plantations.",
+      "specialization_en": "Birdwatching, Survival, First Aid",
+      "specialization_pt": "Observação de Aves, Sobrevivência, Primeiros Socorros",
+      "specialization_fr": "Observation des oiseaux, Survie, Premiers secours"
+    }
+  },
+  {
+    "model": "teladoshi.expedition",
+    "pk": 2,
+    "fields": {
+      "vendor": 2,
+      "price": "40.00",
+      "is_active": true,
+      "slug": "jairson-cruz",
+      "badge_tags": "HISTORY",
+      "name_en": "Jairson Cruz",
+      "name_pt": "Jairson Cruz",
+      "name_fr": "Jairson Cruz",
+      "description_en": "Specialized in the 'Cacao Routes' and the post-colonial history of the Roças.",
+      "description_pt": "Especializado nas 'Rotas do Cacau' e na história pós-colonial das Roças.",
+      "description_fr": "Spécialisé dans les « Routes du cacao » et l'histoire postcoloniale des Roças.",
+      "specialization_en": "Cacao Expert, Photography, Storytelling",
+      "specialization_pt": "Especialista em Cacau, Fotografia, Contação de Histórias",
+      "specialization_fr": "Expert en cacao, Photographie, Narration"
+    }
+  },
+  {
+    "model": "teladoshi.expedition",
+    "pk": 3,
+    "fields": {
+      "vendor": 2,
+      "price": "50.00",
+      "is_active": true,
+      "slug": "maria-d-apresentacao",
+      "badge_tags": "MARINE LIFE",
+      "name_en": "Maria d'Apresentação",
+      "name_pt": "Maria d'Apresentação",
+      "name_fr": "Maria d'Apresentação",
+      "description_en": "Leader in southern turtle-watching expeditions and coastal biodiversity.",
+      "description_pt": "Líder em expedições de observação de tartarugas no sul e biodiversidade costeira.",
+      "description_fr": "Leader des expéditions d'observation des tortues dans le sud et de la biodiversité côtière.",
+      "specialization_en": "Turtle Watching, Diving, Navigation",
+      "specialization_pt": "Observação de Tartarugas, Mergulho, Navegação",
+      "specialization_fr": "Observation des tortues, Plongée, Navigation"
+    }
+  },
+
+  {
+    "model": "teladoshi.expedition",
+    "pk": 4,
+    "fields": {
+      "vendor": 3,
+      "price": "45.00",
+      "is_active": true,
+      "slug": "lucas-mendes",
+      "badge_tags": "TREKKING",
+      "name_en": "Lucas Mendes",
+      "name_pt": "Lucas Mendes",
+      "name_fr": "Lucas Mendes",
+      "description_en": "Specialist in volcanic caldera descents, high-altitude geology mapping, and alpine navigation.",
+      "description_pt": "Especialista em descidas de caldeiras vulcânicas, mapeamento geológico de alta altitude e navegação alpina.",
+      "description_fr": "Spécialiste des descentes de caldeiras volcaniques, de la cartographie géologique en haute altitude et de la navigation alpine.",
+      "specialization_en": "Geology, Alpine Rescue, Night Trekking",
+      "specialization_pt": "Geologia, Resgate Alpino, Trekking Noturno",
+      "specialization_fr": "Géologie, Sauvetage alpin, Trekking nocturne"
+    }
+  },
+  {
+    "model": "teladoshi.stay",
+    "pk": 1,
+    "fields": {
+      "vendor": 1,
+      "price": "185.00",
+      "is_active": true,
+      "slug": "canopy-treehouse-loft",
+      "name_en": "Rainforest Canopy Treehouse",
+      "name_pt": "Casa na Árvore na Copa da Floresta",
+      "name_fr": "Cabane dans la Canopée de la Forêt Tropicale",
+      "description_en": "Sleep suspended 15 meters above the forest floor in complete sustainable comfort.",
+      "description_pt": "Durma suspenso a 15 metros do chão da floresta em completo conforto sustentável.",
+      "description_fr": "Dormez suspendu à 15 mètres au-dessus du sol de la forêt dans un confort durable et absolu.",
+      "category_en": "Treehouses",
+      "category_pt": "Casas na Árvore",
+      "category_fr": "Cabanes dans les arbres",
+      "location_detail_en": "Deep Jungle Reserve, Sector G",
+      "location_detail_pt": "Reserva da Selva Profunda, Sector G",
+      "location_detail_fr": "Réserve de la Jungle Profonde, Secteur G",
+      "amenities_en": "Observation Deck, Solar Hot Water, Wifi",
+      "amenities_pt": "Plataforma de Observação, Água Quente Solar, Wifi",
+      "amenities_fr": "Plateforme d'observation, Eau chaude solaire, Wifi"
+    }
+  },
+  {
+    "model": "teladoshi.stay",
+    "pk": 2,
+    "fields": {
+      "vendor": 2,
+      "price": "380.00",
+      "is_active": true,
+      "slug": "skyline-penthouse-suite",
+      "name_en": "Panoramic Skyline Penthouse",
+      "name_pt": "Penthouse Panorâmica no Horizonte",
+      "name_fr": "Penthouse Panoramique sur l'Horizon",
+      "description_en": "Floor-to-ceiling glass architecture offering uninterrupted views over the historic center.",
+      "description_pt": "Arquitetura de vidro do chão ao teto, oferecendo vistas ininterruptas sobre o centro histórico.",
+      "description_fr": "Architecture de verre du sol au plafond offrant des vues imprenables sur le centre historique.",
+      "category_en": "Luxury Suites",
+      "category_pt": "Suites de Luxo",
+      "category_fr": "Suites de Luxe",
+      "location_detail_en": "Central Sky Tower, Floor 42",
+      "location_detail_pt": "Torre Sky Central, Piso 42",
+      "location_detail_fr": "Tour Sky Centrale, Étage 42",
+      "amenities_en": "Infinity Pool, Private Chef Access, Wine Cellar",
+      "amenities_pt": "Piscina Infinita, Acesso a Chef Privado, Garrafeira",
+      "amenities_fr": "Piscine à débordement, Accès Chef Privé, Cave à vin"
+    }
+  },
+  {
+    "model": "teladoshi.stay",
+    "pk": 3,
+    "fields": {
+      "vendor": 2,
+      "price": "590.00",
+      "is_active": true,
+      "slug": "crystal-lagoon-bungalow",
+      "name_en": "Overwater Sapphire Bungalow",
+      "name_pt": "Bangalô de Safira Sobre a Água",
+      "name_fr": "Bungalow Saphir sur Pilotis",
+      "description_en": "Luxury timber bungalows raised over clear tidal lagoon habitats.",
+      "description_pt": "Bangalôs de madeira de luxo erguidos sobre habitats de lagoas de maré claras.",
+      "description_fr": "Bungalows de luxe en bois construits au-dessus des habitats d'un lagon de marée limpide.",
+      "category_en": "Resorts",
+      "category_pt": "Resorts",
+      "category_fr": "Complexes Hôteliers",
+      "location_detail_en": "North Coast Lagoon Marine Sanctuary",
+      "location_detail_pt": "Santuário Marinho da Lagoa da Costa Norte",
+      "location_detail_fr": "Sanctuaire Marin du Lagon de la Côte Nord",
+      "amenities_en": "Glass Floor Panels, Private Lagoon Dock, All-Inclusive",
+      "amenities_pt": "Painéis de Piso de Vidro, Cais Privado na Lagoa, Tudo Incluído",
+      "amenities_fr": "Plancher de verre, Ponton privé sur le lagon, Tout compris"
+    }
+  },
+  {
+    "model": "teladoshi.stay",
+    "pk": 4,
+    "fields": {
+      "vendor": 3,
+      "price": "99.00",
+      "is_active": true,
+      "slug": "roca-colonial-plantation",
+      "name_en": "Restored Roça Plantation House",
+      "name_pt": "Casa de Roça Colonial Restaurada",
+      "name_fr": "Maison de Plantation Roça Restaurée",
+      "description_en": "Immerse yourself in history inside a completely restored 19th-century vanilla estate.",
+      "description_pt": "Mergulhe na história dentro de uma propriedade de baunilha do século XIX totalmente restaurada.",
+      "description_fr": "Plongez dans l'histoire au cœur d'un domaine de vanille du XIXe siècle entièrement restauré.",
+      "category_en": "Heritage Estates",
+      "category_pt": "Propriedades Históricas",
+      "category_fr": "Domaines Historiques",
+      "location_detail_en": "High Country Vanilla Valley",
+      "location_detail_pt": "Vale da Baunilha na Zona Alta",
+      "location_detail_fr": "Vallée de la Vanille des Hautes Terres",
+      "amenities_en": "Botanical Gardens, Veranda Cocktail Lounge, Farm Walks",
+      "amenities_pt": "Jardins Botânicos, Sala de Cocktails na Varanda, Passeios na Quinta",
+      "amenities_fr": "Jardins botaniques, Salon de cocktails sur la véranda, Promenades à la ferme"
+    }
+  },
+  {
+    "model": "teladoshi.restaurant",
+    "pk": 1,
+    "fields": {
+      "vendor": 2,
+      "price": "55.00",
+      "is_active": true,
+      "slug": "clifftop-sunset-lounge",
+      "opening_hours": "16:00 - 23:00",
+      "name_en": "The Clifftop Sunset Lounge",
+      "name_pt": "O Lounge do Pôr do Sol no Acantilado",
+      "name_fr": "Le Lounge du Coucher de Soleil sur la Falaise",
+      "description_en": "Savour freshly caught marine delicacies directly overlooking stormy coastal breaks.",
+      "description_pt": "Saboreie delícias marinhas frescas pescadas diretamente com vista para as ondas da costa.",
+      "description_fr": "Savourez des délices marins fraîchement pêchés avec une vue directe sur les vagues côtières tumultueuses.",
+      "subtitle_en": "Fine Dining & Ocean Vistas",
+      "subtitle_pt": "Alta Cozinha e Vistas do Oceano",
+      "subtitle_fr": "Cuisine Raffinée & Vues sur l'Océan",
+      "location_en": "West Point Headlands",
+      "location_pt": "Promontório do Ponto Oeste",
+      "location_fr": "Promontoire de West Point"
+    }
+  },
+  {
+    "model": "teladoshi.restaurant",
+    "pk": 2,
+    "fields": {
+      "vendor": 2,
+      "price": "42.00",
+      "is_active": true,
+      "slug": "organic-farm-bistro",
+      "opening_hours": "12:00 - 21:00",
+      "name_en": "The Root & Leaf Bistro",
+      "name_pt": "O Bistro Raiz e Folha",
+      "name_fr": "Le Bistro Racine & Feuille",
+      "description_en": "A strict field-to-plate organic dining experience celebrating local volcanic soils.",
+      "description_pt": "Uma experiência gastronómica biológica rigorosa do campo ao prato, celebrando solos vulcânicos locais.",
+      "description_fr": "Une expérience culinaire biologique stricte du champ à l'assiette célébrant les sols volcaniques locaux.",
+      "subtitle_en": "Sustainable Micro-Gastronomy",
+      "subtitle_pt": "Microgastronomia Sustentável",
+      "subtitle_fr": "Micro-Gastronomie Durable",
+      "location_en": "Old Promenade, Lot 12",
+      "location_pt": "Passeio Antigo, Lote 12",
+      "location_fr": "Ancienne Promenade, Lot 12"
+    }
+  },
+  {
+    "model": "teladoshi.restaurant",
+    "pk": 3,
+    "fields": {
+      "vendor": 4,
+      "price": "85.00",
+      "is_active": true,
+      "slug": "maritime-spiced-route",
+      "opening_hours": "18:00 - 01:00",
+      "name_en": "The Spiced Merchant Route",
+      "name_pt": "A Rota do Comerciante de Especiarias",
+      "name_fr": "La Route des Marchands d'Épices",
+      "description_en": "Multi-course historical tasting menus tracing ancient cross-oceanic spice paths.",
+      "description_pt": "Menus de degustação históricos de vários pratos que traçam antigas rotas de especiarias transoceânicas.",
+      "description_fr": "Menus de dégustation historiques à plusieurs plats retraçant les anciennes routes des épices transocéaniques.",
+      "subtitle_en": "Historical Fusion Infusions",
+      "subtitle_pt": "Infusões de Fusão Histórica",
+      "subtitle_fr": "Infusions de Fusion Historique",
+      "location_en": "Old Quarter Alleyways",
+      "location_pt": "Becos do Bairro Antigo",
+      "location_fr": "Ruelles du Vieux Quartier"
+    }
+  },
+  {
+    "model": "teladoshi.restaurant",
+    "pk": 4,
+    "fields": {
+      "vendor": 3,
+      "price": "20.00",
+      "is_active": true,
+      "slug": "baobab-shade-brewery",
+      "opening_hours": "08:00 - 17:00",
+      "name_en": "Baobab Shadow Coffee Hub",
+      "name_pt": "Ponto de Café Sombra do Embondeiro",
+      "name_fr": "Le Café de l'Ombre du Baobab",
+      "description_en": "Relaxed open-air stone terrace roasting single-origin shade-grown specialty coffees.",
+      "description_pt": "Terraço de pedra relaxado ao ar livre torrando cafés especiais de origem única cultivados à sombra.",
+      "description_fr": "Terrasse en pedra décontractée en plein air torréfiant des cafés de spécialité d'origine unique cultivés à l'ombre.",
+      "subtitle_en": "Artisan Roasters & Patisserie",
+      "subtitle_pt": "Torrefação Artesanal e Pastelaria",
+      "subtitle_fr": "Torréfacteurs Artisans & Pâtisserie",
+      "location_en": "Coastal Highway KM 14",
+      "location_pt": "Estrada Marginal KM 14",
+      "location_fr": "Route Côtière KM 14"
+    }
+  },
+  {
+    "model": "teladoshi.fleet",
+    "pk": 1,
+    "fields": {
+      "vendor": 1,
+      "price": "110.00",
+      "is_active": true,
+      "slug": "overland-safari-truck",
+      "vehicle_type": "Modified 4x4 Troop Carrier",
+      "transmission": "Manual",
+      "engine": "4.2L Multi-Turbo Diesel",
+      "features": "Snorkel System, Winch, Roof Racks",
+      "name_en": "Overland Expedition Cruiser",
+      "name_pt": "Cruzeiro de Expedição Overland",
+      "name_fr": "Cruiser d'Expédition Overland",
+      "description_en": "Heavy duty tracking mechanics modified strictly to master thick volcanic mud pits safely.",
+      "description_pt": "Mecânica de rastreio pesada modificada estritamente para dominar poços de lama vulcânica espessa com segurança.",
+      "description_fr": "Mécanique de suivi robuste modifiée strictement pour maîtriser les fosses de boue volcanique épaisse en toute sécurité."
+    }
+  },
+  {
+    "model": "teladoshi.fleet",
+    "pk": 2,
+    "fields": {
+      "vendor": 2,
+      "price": "125.00",
+      "is_active": true,
+      "slug": "urban-electric-sedan",
+      "vehicle_type": "Premium Luxury Sedan",
+      "transmission": "Automatic",
+      "engine": "Dual-Motor Electric 300kW",
+      "features": "Autopilot, Full Leather Interiors, Air Suspension",
+      "name_en": "Eco-Luxury Electric Sedan",
+      "name_pt": "Sedan Elétrico de Eco-Luxo",
+      "name_fr": "Berline Électrique Éco-Luxe",
+      "description_en": "A zero-emission silent city cruiser engineered for absolute passenger isolation and comfort.",
+      "description_pt": "Um cruzeiro urbano silencioso de zero emissões, projetado para isolamento e conforto absoluto dos passageiros.",
+      "description_fr": "Un cruiser urbain silencieux et zéro émission, conçu pour l'isolation et le confort absolus des passagers."
+    }
+  },
+  {
+    "model": "teladoshi.fleet",
+    "pk": 3,
+    "fields": {
+      "vendor": 3,
+      "price": "39.00",
+      "is_active": true,
+      "slug": "island-agile-scooters",
+      "vehicle_type": "Scooter / moped",
+      "transmission": "Automatic",
+      "engine": "150cc Fuel-Injected Sport",
+      "features": "Dual Offroad Helmets, Top Box Carrier",
+      "name_en": "Coastal Trail Agile Scooters",
+      "name_pt": "Scooters Ágeis de Trilhas Costeiras",
+      "name_fr": "Scooters Agiles des Sentiers Côtiers",
+      "description_en": "Lightweight and agile scooters perfect for unlocking hard-to-reach ocean coves.",
+      "description_pt": "Scooters leves e ágeis, perfeitas para desbloquear enseadas oceânicas de difícil acesso.",
+      "description_fr": "Scooters légers et agiles, parfaits pour accéder aux criques océaniques difficiles d'accès."
+    }
+  },
+  {
+    "model": "teladoshi.fleet",
+    "pk": 4,
+    "fields": {
+      "vendor": 1,
+      "price": "155.00",
+      "is_active": true,
+      "slug": "large-group-transit-van",
+      "vehicle_type": "High-Roof Passenger Van",
+      "transmission": "Automatic",
+      "engine": "3.5L Twin-Turbo EcoBoost V6",
+      "features": "Climate Control Zones, Extended Luggage Holding",
+      "name_en": "9-Passenger Team Support Van",
+      "name_pt": "Van de Apoio de Equipa para 9 Passageiros",
+      "name_fr": "Van de Support d'Équipe pour 9 Passagers",
+      "description_en": "Configured specifically with reinforced suspension models for smooth group transits.",
+      "description_pt": "Configurado especificamente com modelos de suspensão reforçada para trânsitos suaves em grupo.",
+      "description_fr": "Configuré spécifiquement avec des modèles de suspension renforcée pour des trajets de groupe fluides."
+    }
+  },
+  {
+    "model": "teladoshi.place",
+    "pk": 1,
+    "fields": {
+      "vendor": 1,
+      "price": "0.00",
+      "is_active": true,
+      "slug": "three-waterfalls-canyon",
+      "access_type": "Free Public Access",
+      "coordinates": "0.3421 N, 6.7214 E",
+      "name_en": "Hidden Triple-Cascade Canyon",
+      "name_pt": "Canyon da Cascata Tripla Escondida",
+      "name_fr": "Canyon Secret de la Triple Cascade",
+      "description_en": "A completely isolated canyon network culminating in three pristine natural springs.",
+      "description_pt": "Uma rede de desfiladeiros completamente isolada que culmina em três nascentes naturais intocadas.",
+      "description_fr": "Un réseau de canyons complètement isolé culminant dans trois sources naturelles cristallines."
+    }
+  },
+  {
+    "model": "teladoshi.place",
+    "pk": 2,
+    "fields": {
+      "vendor": 1,
+      "price": "15.00",
+      "is_active": true,
+      "slug": "colonial-ruins-sanctuary",
+      "access_type": "Government Permit Required",
+      "coordinates": "0.3499 N, 6.7110 E",
+      "name_en": "15th-Century Fortress Ruins",
+      "name_pt": "Ruínas da Fortaleza do Século XV",
+      "name_fr": "Ruines de la Forteresse du XVe Siècle",
+      "description_en": "Protected archaeological monument tracking the early maritime settlement histories.",
+      "description_pt": "Monumento arqueológico protegido que rastreia as primeiras histórias de assentamento marítimo.",
+      "description_fr": "Monument archéologique protégé retraçant les premières histoires d'établissements maritimes."
+    }
+  },
+  {
+    "model": "teladoshi.place",
+    "pk": 3,
+    "fields": {
+      "vendor": 4,
+      "price": "30.00",
+      "is_active": true,
+      "slug": "blue-hole-barrier-reef",
+      "access_type": "Marine Eco-Permit",
+      "coordinates": "0.2911 N, 6.8014 E",
+      "name_en": "Blue Hole Oceanic Reef System",
+      "name_pt": "Sistema de Recifes Oceânicos do Buraco Azul",
+      "name_fr": "Système de Récifs Océaniques du Trou Bleu",
+      "description_en": "A highly-protected diving zone famous for giant sea fan fields and volcanic drops.",
+      "description_pt": "Uma zona de mergulho altamente protegida, famosa por campos de leques do mar gigantes e quedas vulcânicas.",
+      "description_fr": "Une zone de plongée hautement protégée célèbre pour ses champs de gorgones géantes et ses tombants volcaniques."
+    }
+  },
+  {
+    "model": "teladoshi.place",
+    "pk": 4,
+    "fields": {
+      "vendor": 3,
+      "price": "0.00",
+      "is_active": true,
+      "slug": "high-peak-360-lookout",
+      "access_type": "Free Public Access",
+      "coordinates": "0.3155 N, 6.6988 E",
+      "name_en": "Summit Horizon 360 Lookout",
+      "name_pt": "Miradouro 360 do Horizonte do Pico",
+      "name_fr": "Belvédère Horizon 360 du Sommet",
+      "description_en": "The highest accessible clearing on the ridge offering views spanning both coastal borders.",
+      "description_pt": "A clareira acessível mais alta da crista, oferecendo vistas que abrangem ambas as fronteiras costeiras.",
+      "description_fr": "La clairière accessible la plus haute de la crête, offrant des vues s'étendant sur les deux frontières côtières."
+    }
+  }
+]

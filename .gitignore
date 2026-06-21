@@ -1,0 +1,83 @@
+# ==============================================================================
+# 1. PYTHON & DJANGO COMPILED BYTECODE
+# ==============================================================================
+__pycache__/
+*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.coverage
+
+# ==============================================================================
+# 2. LOCAL SETTINGS & SECRETS (DO NOT COMMIT PROD SECRETS!)
+# ==============================================================================
+.env
+.env.dev
+.env.prod
+.env.prod.db
+local_settings.py
+dev.py
+
+# ==============================================================================
+# 3. VIRTUAL ENVIRONMENTS & DEPENDENCY MANAGERS
+# ==============================================================================
+.venv/
+env/
+venv/
+ENV/
+.python-version
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ==============================================================================
+# 4. DATABASE RUNTIME FILTERS, DUMPS & SQL BACKUPS
+# ==============================================================================
+db.sqlite3
+db.sqlite3-journal
+*.dump
+*.sql
+backups/
+backupo.sql
+backup_before_cleanup.sql
+backup-08.sql
+backup-18.sql
+backup-20.sql
+
+# ==============================================================================
+# 5. DOCKER OVERRIDES & WORKSPACE DEPLOYMENT SPECIFICS
+# ==============================================================================
+docker-compose.yml
+docker-compose.prod.yml 
+# ==============================================================================
+# 6. STATIC ASSETS & USER STORAGE (MULTI-TENANT ISOLATIONS)
+# ==============================================================================
+static/
+/static/
+static_root/
+staticfiles/
+media/
+remittance_staticfiles/
+certificates_staticfiles/
+cms_staticfiles/
+tour_staticfiles/
+
+# ==============================================================================
+# 7. LOGS, TEXT SCRATCHPADS & TEMPORARY DOCS (FROM SIDEBAR)
+# ==============================================================================
+*.log
+general.log
+tec.txt
+ARCHITECTURE-2.txt
+django_python_skills.txt
+
+# ==============================================================================
+# 8. IDE, OS INTERNALS & EDITORS UNSTABLE CACHES
+# ==============================================================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.bak
+*.swp
+*:Zone.Identifier

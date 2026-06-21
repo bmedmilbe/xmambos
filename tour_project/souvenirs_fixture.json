@@ -1,0 +1,87 @@
+[
+  {
+    "model": "teladoshi.souvenir",
+    "pk": 1,
+    "fields": {
+      "vendor": 1,
+      "price": "12.00",
+      "is_active": true,
+      "slug": "cecan-premium-chocolate",
+      "category": "flavors",
+      "name_en": "Cecan Premium Chocolate",
+      "name_pt": "Chocolate Premium Cecan",
+      "name_fr": "Chocolat Premium Cecan",
+      "description_en": "Pure organic single-origin cacao harvested from traditional roças.",
+      "description_pt": "Cacau puro orgânico de origem única colhido em roças tradicionais.",
+      "description_fr": "Cacao pur biologique d'origine unique récolté dans des roças traditionnelles."
+    }
+  },
+  {
+    "model": "teladoshi.souvenir",
+    "pk": 2,
+    "fields": {
+      "vendor": 1,
+      "price": "25.00",
+      "is_active": true,
+      "slug": "handmade-rosewood-turtle",
+      "category": "crafts",
+      "name_en": "Handmade Rosewood Turtle",
+      "name_pt": "Tartaruga de Pau-Rosa Feita à Mão",
+      "name_fr": "Tortue en Bois de Rose Fait Main",
+      "description_en": "Finely carved ornamental turtle made by local artisans from sustainable wood.",
+      "description_pt": "Tartaruga ornamental finamente esculpida por artesãos locais em madeira sustentável.",
+      "description_fr": "Tortue ornementale finement sculptée par des artisans locaux à partir de bois durable."
+    }
+  },
+  {
+    "model": "teladoshi.souvenir",
+    "pk": 3,
+    "fields": {
+      "vendor": 2,
+      "price": "18.50",
+      "is_active": true,
+      "slug": "organic-coconut-oil-wellness",
+      "category": "wellness",
+      "name_en": "Organic Coconut Wellness Oil",
+      "name_pt": "Óleo de Coco Orgânico de Bem-Estar",
+      "name_fr": "Huile de Bien-être à la Noix de Coco Bio",
+      "description_en": "Cold-pressed pure cosmetic coconut oil infused with local island botanicals.",
+      "description_pt": "Óleo de coco cosmético puro prensado a frio, infundido com botânicos locais da ilha.",
+      "description_fr": "Huile de coco cosmétique pure pressée à froid et infusée de plantes locales de l'île."
+    }
+  },
+  {
+    "model": "teladoshi.souvenir",
+    "pk": 4,
+    "fields": {
+      "vendor": 2,
+      "price": "35.00",
+      "is_active": true,
+      "slug": "traditional-woven-beach-tote",
+      "category": "apparel",
+      "name_en": "Traditional Woven Beach Tote",
+      "name_pt": "Bolsa de Praia Tecida Tradicional",
+      "name_fr": "Cabas de Plage Tissé Traditionnel",
+      "description_en": "Durable beach bag woven by hand using local natural plant fibers.",
+      "description_pt": "Saco de praia durável tecido à mão usando fibras vegetais naturais locais.",
+      "description_fr": "Sac de plage durable tissé à la main avec des fibres végétales naturelles locales."
+    }
+  },
+  {
+    "model": "teladoshi.souvenir",
+    "pk": 5,
+    "fields": {
+      "vendor": 1,
+      "price": "15.00",
+      "is_active": true,
+      "slug": "wild-ob-forest-honey",
+      "category": "flavors",
+      "name_en": "Wild Obô Forest Honey",
+      "name_pt": "Mel Silvestre da Floresta do Obô",
+      "name_fr": "Miel Sauvage de la Forêt d'Obô",
+      "description_en": "Raw, unfiltered exotic honey sourced deep within the national park ecosystems.",
+      "description_pt": "Mel exótico cru e não filtrado extraído profundamente nos ecossistemas do parque nacional.",
+      "description_fr": "Miel exotique brut et non filtré provenant des profondeurs des écosystèmes du parc national."
+    }
+  }
+]

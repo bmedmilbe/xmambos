@@ -10,4 +10,4 @@ ENV PORT=80
 COPY local.conf /etc/nginx/nginx.conf.template
 
 # 4. CORREÇÃO: Passando as variáveis com escape para o envsubst não apagar as variáveis do Nginx
-CMD ["/bin/sh", "-c", "envsubst '\\$PORT \\$CMS_URL \\$TOUR_URL \\$REMITTANCE_URL \\$CERTIFICATE_URL' < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+CMD ["/bin/sh", "-c", "envsubst '\\$PORT' < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]

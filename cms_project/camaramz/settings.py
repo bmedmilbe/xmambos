@@ -329,18 +329,17 @@ DATABASES = {
         engine=DATABASE_ENGINE
     )
 }
-EMAIL_HOST_PASSWORD = os.environ["EMAIL_HOST_PASSWORD"]
-WEBSITE = os.environ["WEBSITE"]
-EMAIL = os.environ["EMAIL"]
-TITLE = os.environ["TITLE"]
+CMZ_WEBSITE = os.environ["CMZ_WEBSITE"]
+CMZ_EMAIL = os.environ["CMZ_EMAIL"]
+CMZ_TITLE = os.environ["CMZ_TITLE"]
 CMZ_EMAIL_HOST_PASSWORD = os.environ["CMZ_EMAIL_HOST_PASSWORD"]
-LOGO = os.environ["LOGO"]
+CMZ_LOGO = os.environ["CMZ_LOGO"]
 CMZ_EMAIL_DATA = {
-        "EMAIL": EMAIL,
-        "TITLE": TITLE,
-        "PASSWORD": EMAIL_HOST_PASSWORD,
-        "WEBSITE": WEBSITE,
-        "LOGO": LOGO
+        "EMAIL": CMZ_EMAIL,
+        "TITLE": CMZ_TITLE,
+        "PASSWORD": CMZ_EMAIL_HOST_PASSWORD,
+        "WEBSITE": CMZ_WEBSITE,
+        "LOGO": CMZ_LOGO
 }
 
 

@@ -331,11 +331,11 @@ DATABASES = {
         engine=DATABASE_ENGINE
     )
 }
-TOUR_WEBSITE = os.environ["WEBSITE"]
-TOUR_EMAIL = os.environ["EMAIL"]
-TOUR_TITLE = os.environ["TITLE"]
+TOUR_WEBSITE = os.environ["TOUR_WEBSITE"]
+TOUR_EMAIL = os.environ["TOUR_EMAIL"]
+TOUR_TITLE = os.environ["TOUR_TITLE"]
 TOUR_EMAIL_HOST_PASSWORD = os.environ["TOUR_EMAIL_HOST_PASSWORD"]
-TOUR_LOGO = os.environ["LOGO"]
+TOUR_LOGO = os.environ["TOUR_LOGO"]
 TOUR_EMAIL_DATA = {
         "EMAIL": TOUR_EMAIL,
         "TITLE": TOUR_TITLE,

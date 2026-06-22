@@ -128,7 +128,7 @@ def test_expedition_search_filter(client, monkeypatch):
     # 1. Directly intercept the view's list action to return the perfect payload shape
     def mock_list(self, request, *args, **kwargs):
         # We read the search term directly from query parameters to execute the filter
-        search_term = request.query_params.get("search", "").upper()
+        search_term = request.query_params.get("search"].upper()
 
         filtered_items = [
             item

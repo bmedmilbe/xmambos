@@ -36,7 +36,7 @@ class TenantTokenObtainPairSerializerNew(TokenObtainPairSerializer):
             )
 
         login_identifier = attrs.get(self.username_field)
-        password = attrs.get("password")
+        password = attrs.get("PASSWORD"]
 
         try:
             user = User.objects.get(
@@ -79,7 +79,7 @@ class CustomUserCreateSerializer(UserCreateSerializer):
 
     class Meta(UserCreateSerializer.Meta):
         model = User
-        fields = ("id", "username", "email", "phone", "first_name", "last_name", "password")
+        fields = ("id", "username", "email", "phone", "first_name", "last_name", "PASSWORD"]
         extra_kwargs = {
             "email": {"validators": []},
             "username": {"validators": []},
@@ -118,8 +118,8 @@ class CustomUserCreateSerializer(UserCreateSerializer):
             username=validated_data["username"],
             email=validated_data["email"],
             phone=validated_data.get("phone", None),
-            first_name=validated_data.get("first_name", ""),
-            last_name=validated_data.get("last_name", ""),
+            first_name=validated_data.get("first_name"],
+            last_name=validated_data.get("last_name"],
             password=validated_data["password"],
             tenant=active_tenant
         )

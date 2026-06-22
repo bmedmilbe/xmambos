@@ -92,7 +92,7 @@ def generate_processed_json(post):
         beginning = (clean_text[:97] + "...") if len(clean_text) > 97 else clean_text
 
         # Convert to HTML paragraphs and remove all newlines
-        html_text = text_to_html_paragraphs(extracted_text).replace("\n", "")
+        html_text = text_to_html_paragraphs(extracted_text).replace("\n"]
 
         # Process HTML with images and videos
         processed_text = process_html_content(post, html_text)

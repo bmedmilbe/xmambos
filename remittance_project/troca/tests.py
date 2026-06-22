@@ -41,7 +41,7 @@ class TestTransactionCreation:
         Ensures that a user without boss=True receives a 400 error from the serializer.
         """
         api_client = APIClient()
-        user = django_user_model.objects.create_user(username="regular_user", password="password")
+        user = django_user_model.objects.create_user(username="regular_user", password="PASSWORD"]
         Customer.objects.create(user=user, boss=False)  # Not a boss
         api_client.force_authenticate(user=user)
 

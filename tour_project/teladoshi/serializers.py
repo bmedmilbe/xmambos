@@ -50,7 +50,7 @@ class ServiceImageSerializer(serializers.ModelSerializer):
         # else None
         # )
         # if target:
-        #     data["display_name"] = getattr(target, "name", "")
+        #     data["display_name"] = getattr(target, "name"]
 
         return data
 

@@ -19,33 +19,25 @@ sys.path.insert(0, str(BASE_DIR.parent))
 import dj_database_url
 
 # 1. Safely resolve boolean evaluation to prevent text quote bugs
-raw_debug = os.environ.get("DEBUG", "0").replace('"', '').replace("'", "").strip()
-DEBUG = raw_debug in ["True", "1"]
 
-SECRET_KEY = os.environ.get("SECRET_KEY", "fallback_change_me").replace('"', '').replace("'", "").strip()
+DEBUG = os.environ["DEBUG"]
 
-# 2. Clean and parse host array allowances
-raw_hosts = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 .localhost")
-cleaned_hosts = raw_hosts.replace('"', '').replace("'", "").strip()
-ALLOWED_HOSTS = cleaned_hosts.split(" ")
-# 3. Clean and parse trusted origins whitelists
-raw_origins = os.environ.get("CSRF_TRUSTED_ORIGINS", "")
-cleaned_origins = raw_origins.replace('"', '').replace("'", "").strip()
-CSRF_TRUSTED_ORIGINS = cleaned_origins.split(" ")
+SECRET_KEY = os.environ["SECRET_KEY"]
 
-# 4. Clean cookie security bounds explicitly
-SESSION_COOKIE_DOMAIN = os.environ.get("SESSION_COOKIE_DOMAIN", ".teladoshi.com")
-CSRF_COOKIE_DOMAIN = os.environ.get("CSRF_COOKIE_DOMAIN", ".teladoshi.com")
 
-if SESSION_COOKIE_DOMAIN: 
-    SESSION_COOKIE_DOMAIN = SESSION_COOKIE_DOMAIN.replace('"', '').replace("'", "").strip()
-if CSRF_COOKIE_DOMAIN: 
-    CSRF_COOKIE_DOMAIN = CSRF_COOKIE_DOMAIN.replace('"', '').replace("'", "").strip()
+ALLOWED_HOSTS = os.environ["DJANGO_ALLOWED_HOSTS"]
 
-# 5. Boolean flags evaluation for cookies
-SESSION_COOKIE_SECURE = os.environ.get("SESSION_COOKIE_SECURE", "False").replace('"', '') == "True"
-CSRF_COOKIE_SECURE = os.environ.get("CSRF_COOKIE_SECURE", "False").replace('"', '') == "True"
-SESSION_COOKIE_HTTPONLY = os.environ.get("SESSION_COOKIE_HTTPONLY", "True").replace('"', '') == "True"
+
+CSRF_TRUSTED_ORIGINS = os.environ["CSRF_TRUSTED_ORIGINS"]
+
+
+SESSION_COOKIE_DOMAIN = os.environ["SESSION_COOKIE_DOMAIN"]
+CSRF_COOKIE_DOMAIN = os.environ["CSRF_COOKIE_DOMAIN"]
+
+
+SESSION_COOKIE_SECURE = os.environ["SESSION_COOKIE_SECURE"]
+CSRF_COOKIE_SECURE = os.environ["CSRF_COOKIE_SECURE"]
+SESSION_COOKIE_HTTPONLY = os.environ["SESSION_COOKIE_HTTPONLY"]
 
 if DEBUG: 
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -317,7 +309,7 @@ LOGGING = {
     "loggers": {
         "": {
             "handlers": ["console", "file"],
-            "level": os.environ.get("DJANGO_LOG_LEVEL", "INFO"),
+            "level": os.environ["DJANGO_LOG_LEVEL", "INFO"],
         }
     },
     "formatters": {
@@ -330,8 +322,8 @@ LOGGING = {
 
 
 SILENCED_SYSTEM_CHECKS = ["auth.E003", "auth.W004"]
-DATABASE_URL = os.environ.get("DATABASE_URL","")
-DATABASE_ENGINE = os.environ.get("DATABASE_ENGINE","")
+DATABASE_URL = os.environ["DATABASE_URL"]
+DATABASE_ENGINE = os.environ["DATABASE_ENGINE"]
 DATABASES = {
     "default": dj_database_url.config(
         default=DATABASE_URL, 
@@ -339,11 +331,11 @@ DATABASES = {
         engine=DATABASE_ENGINE
     )
 }
-TOUR_WEBSITE = os.environ.get("WEBSITE","")
-TOUR_EMAIL = os.environ.get("EMAIL","")
-TOUR_TITLE = os.environ.get("TITLE","")
-TOUR_EMAIL_HOST_PASSWORD = os.environ.get("TOUR_EMAIL_HOST_PASSWORD")
-TOUR_LOGO = os.environ.get("LOGO", "")
+TOUR_WEBSITE = os.environ["WEBSITE"]
+TOUR_EMAIL = os.environ["EMAIL"]
+TOUR_TITLE = os.environ["TITLE"]
+TOUR_EMAIL_HOST_PASSWORD = os.environ["TOUR_EMAIL_HOST_PASSWORD"]
+TOUR_LOGO = os.environ["LOGO"]
 TOUR_EMAIL_DATA = {
         "EMAIL": TOUR_EMAIL,
         "TITLE": TOUR_TITLE,
@@ -354,9 +346,9 @@ TOUR_EMAIL_DATA = {
 
 
 
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID", "")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "")
+AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
+AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+AWS_STORAGE_BUCKET_NAME = os.environ["AWS_STORAGE_BUCKET_NAME"]
 AWS_S3_REGION_NAME = "eu-north-1"
 AWS_S3_SIGNATURE_VERSION = "s3v4"
 AWS_DEFAULT_ACL = None

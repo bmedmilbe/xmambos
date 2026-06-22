@@ -15,37 +15,41 @@ from pathlib import Path
 from datetime import timedelta
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# sys.path.insert(0, str(BASE_DIR.parent))
+sys.path.insert(0, str(BASE_DIR.parent))
 import dj_database_url
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-SECRET_KEY = os.environ.get("SECRET_KEY")
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get("DEBUG", default=0))
+# 1. Safely resolve boolean evaluation to prevent text quote bugs
+raw_debug = os.environ.get("DEBUG", "0").replace('"', '').replace("'", "").strip()
+DEBUG = raw_debug in ["True", "1"]
 
-# 1. Parse your allowed host bindings
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 .localhost").split(" ")
+SECRET_KEY = os.environ.get("SECRET_KEY", "fallback_change_me").replace('"', '').replace("'", "").strip()
 
-# 2. Parse and enforce valid trusted origin loops 
-CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "").split(" ")
-# If the split leaves empty array slots, enforce the local development baseline:
-if not CSRF_TRUSTED_ORIGINS or CSRF_TRUSTED_ORIGINS == [""]:
-    CSRF_TRUSTED_ORIGINS = [
-        "http://localhost:8001", "http://localhost:8002", 
-        "http://localhost:8003", "http://localhost:8004",
-        "http://*.localhost:8001", "http://*.localhost:8002", 
-        "http://*.localhost:8003", "http://*.localhost:8004"
-    ]
+# 2. Clean and parse host array allowances
+raw_hosts = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 .localhost")
+cleaned_hosts = raw_hosts.replace('"', '').replace("'", "").strip()
+ALLOWED_HOSTS = cleaned_hosts.split(" ")
 
-# 3. Force concrete string assignments to bypass broken engine lookups
-SESSION_COOKIE_DOMAIN = os.environ.get("SESSION_COOKIE_DOMAIN", ".localhost")
-CSRF_COOKIE_DOMAIN = os.environ.get("CSRF_COOKIE_DOMAIN", ".localhost")
+# 3. Clean and parse trusted origins whitelists
+raw_origins = os.environ.get("CSRF_TRUSTED_ORIGINS", "")
+cleaned_origins = raw_origins.replace('"', '').replace("'", "").strip()
+CSRF_TRUSTED_ORIGINS = cleaned_origins.split(" ")
 
-# Clean out any accidental whitespace parsing artifacts
-if SESSION_COOKIE_DOMAIN: SESSION_COOKIE_DOMAIN = SESSION_COOKIE_DOMAIN.strip()
-if CSRF_COOKIE_DOMAIN: CSRF_COOKIE_DOMAIN = CSRF_COOKIE_DOMAIN.strip()
+# 4. Clean cookie security bounds explicitly
+SESSION_COOKIE_DOMAIN = os.environ.get("SESSION_COOKIE_DOMAIN", ".teladoshi.com")
+CSRF_COOKIE_DOMAIN = os.environ.get("CSRF_COOKIE_DOMAIN", ".teladoshi.com")
 
+if SESSION_COOKIE_DOMAIN: 
+    SESSION_COOKIE_DOMAIN = SESSION_COOKIE_DOMAIN.replace('"', '').replace("'", "").strip()
+if CSRF_COOKIE_DOMAIN: 
+    CSRF_COOKIE_DOMAIN = CSRF_COOKIE_DOMAIN.replace('"', '').replace("'", "").strip()
+
+# 5. Boolean flags evaluation for cookies
+SESSION_COOKIE_SECURE = os.environ.get("SESSION_COOKIE_SECURE", "False").replace('"', '') == "True"
+CSRF_COOKIE_SECURE = os.environ.get("CSRF_COOKIE_SECURE", "False").replace('"', '') == "True"
+SESSION_COOKIE_HTTPONLY = os.environ.get("SESSION_COOKIE_HTTPONLY", "True").replace('"', '') == "True"
+
+if DEBUG: 
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 SHARED_APPS = (
     'modeltranslation',

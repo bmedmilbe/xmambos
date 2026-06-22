@@ -1,7 +1,8 @@
 FROM nginx:1.25
 
-# Clear out any native configuration fragments
+# 1. Clear out all default settings and templates
 RUN rm -rf /etc/nginx/conf.d/*
+RUN rm -rf /etc/nginx/templates/*
 
-# Place the file into the template engine structure
-COPY nginx.conf /etc/nginx/templates/default.conf.template
+# 2. Copy the file directly over the primary execution target
+COPY nginx.conf /etc/nginx/conf.d/default.conf

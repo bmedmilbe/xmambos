@@ -27,7 +27,7 @@ fi
 # fi
 
 # echo "Collecting static files..."
-python manage.py collectstatic --no-input
+# python manage.py collectstatic --no-input
 
 # This passes control to whatever command you run in docker-compose (like gunicorn)
 exec "$@"

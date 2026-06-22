@@ -18,25 +18,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR.parent))
 import dj_database_url
 
-# 1. Safely resolve boolean evaluation to prevent text quote bugs
-
 DEBUG = os.environ["DEBUG"]
 
 SECRET_KEY = os.environ["SECRET_KEY"]
-
-
 ALLOWED_HOSTS = os.environ["DJANGO_ALLOWED_HOSTS"].split(" ")
-
-
 CSRF_TRUSTED_ORIGINS = os.environ["CSRF_TRUSTED_ORIGINS"].split(" ")
-
-
-SESSION_COOKIE_DOMAIN = os.environ["SESSION_COOKIE_DOMAIN"]
 CSRF_COOKIE_DOMAIN = os.environ["CSRF_COOKIE_DOMAIN"]
-
-
-SESSION_COOKIE_SECURE = os.environ["SESSION_COOKIE_SECURE"]
 CSRF_COOKIE_SECURE = os.environ["CSRF_COOKIE_SECURE"]
+SESSION_COOKIE_DOMAIN = os.environ["SESSION_COOKIE_DOMAIN"]
+SESSION_COOKIE_SECURE = os.environ["SESSION_COOKIE_SECURE"]
 SESSION_COOKIE_HTTPONLY = os.environ["SESSION_COOKIE_HTTPONLY"]
 
 if DEBUG: 

@@ -85,3 +85,4 @@ Thumbs.db
 nginxof.conf
 DockerfileOff
 nginxjustwprk.conf
+.env_copy.prod

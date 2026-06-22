@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir pipenv
 
 # FIX: Copy dependency files from the specific project subdirectory
-COPY tour_project/Pipfile tour_project/Pipfile.lock ./
+COPY cms_project/Pipfile cms_project/Pipfile.lock ./
 
 # Generate requirements.txt file from Pipfile.lock
 RUN pipenv requirements > requirements.txt
@@ -57,7 +57,7 @@ RUN pip install --no-cache-dir /wheels/*
 COPY ./core $APP_HOME/core
 
 # 2. Copy your specific project contents into the app home directory
-COPY ./tour_project/. $APP_HOME
+COPY ./cms_project/. $APP_HOME
 
 # 3. Fix entrypoint permissions directly in its final location
 RUN sed -i 's/\r$//g'  $APP_HOME/entrypoint.prod.sh

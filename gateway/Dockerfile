@@ -9,6 +9,5 @@ ENV PORT=80
 # 3. Copia o arquivo diretamente como um template bruto
 COPY local.conf /etc/nginx/nginx.conf.template
 
-# 4. O PULO DO GATO: Executa o envsubst manualmente no boot usando shell puro, 
-# gerando o arquivo final limpo na pasta conf.d e iniciando o Nginx.
-CMD ["/bin/sh", "-c", "envsubst '$PORT $CMS_URL $TOUR_URL $REMITTANCE_URL $CERTIFICATE_URL' < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+# 4. CORREÇÃO: Passando as variáveis com escape para o envsubst não apagar as variáveis do Nginx
+CMD ["/bin/sh", "-c", "envsubst '\\$PORT \\$CMS_URL \\$TOUR_URL \\$REMITTANCE_URL \\$CERTIFICATE_URL' < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]

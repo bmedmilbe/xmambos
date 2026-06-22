@@ -28,8 +28,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "fallback_change_me").replace('"', '')
 raw_hosts = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 .localhost")
 cleaned_hosts = raw_hosts.replace('"', '').replace("'", "").strip()
 # ALLOWED_HOSTS = cleaned_hosts.split(" ")
-ALLOWED_HOSTS ="*"
-
+ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["https://teladoshi.com"]
 # 3. Clean and parse trusted origins whitelists
 raw_origins = os.environ.get("CSRF_TRUSTED_ORIGINS", "")
 cleaned_origins = raw_origins.replace('"', '').replace("'", "").strip()

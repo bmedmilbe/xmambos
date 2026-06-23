@@ -1,8 +1,13 @@
 FROM nginx:alpine
 
-RUN rm -rf /etc/nginx/conf.d/* /etc/nginx/templates/*
-ENV PORT=80
-COPY local.conf /etc/nginx/nginx.conf.template
+ARG CACHE_BYPASS=1 
 
-# 🚀 Comando atualizado para injetar a porta e as URLs dos microsserviços
-CMD ["/bin/sh", "-c", "envsubst '\\$PORT \\$CMS_URL \\$TOUR_URL \\$REMITTANCE_URL \\$CERTIFICATE_URL' < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+# 1. Wipe out both conf.d and the template folders to ensure no auto-generation interferes
+RUN rm -rf /etc/nginx/conf.d/* /etc/nginx/templates/*
+
+# 2. Copy your template to override nginx.conf.template directly
+COPY local.conf /etc/nginx/templates/nginx.conf.template
+
+CMD ["nginx", "-g", "daemon off;"]
+
+EXPOSE 80

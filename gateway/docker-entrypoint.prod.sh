@@ -1,5 +1,5 @@
-# No seu projeto local (fora do container)
-cat > docker-entrypoint.sh << 'EOF'
+# No diretório gateway/
+cat > docker-entrypoint.prod.sh << 'EOF'
 #!/bin/sh
 
 echo "=== Gateway Starting ==="
@@ -34,5 +34,8 @@ nginx -t
 exec nginx -g 'daemon off;'
 EOF
 
-# Torna o script executável
-chmod +x docker-entrypoint.sh
+# Torna executável
+chmod +x docker-entrypoint.prod.sh
+
+# Garanta que é LF (Unix)
+sed -i 's/\r$//' docker-entrypoint.prod.sh

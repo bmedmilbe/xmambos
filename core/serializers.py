@@ -36,7 +36,7 @@ class TenantTokenObtainPairSerializerNew(TokenObtainPairSerializer):
             )
 
         login_identifier = attrs.get(self.username_field)
-        password = attrs.get("PASSWORD"]
+        password = attrs.get("PASSWORD")
 
         try:
             user = User.objects.get(

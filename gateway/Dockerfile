@@ -1,10 +1,11 @@
-# gateway/Dockerfile
 FROM nginx:alpine
 
-# Copia a configuração diretamente
+# Limpa configurações padrão
+RUN rm -rf /etc/nginx/conf.d/*
+
+# Copia a configuração
 COPY local.conf /etc/nginx/conf.d/default.conf
 
-# Comando simples para iniciar o Nginx
-CMD ["nginx", "-g", "daemon off;"]
-
 EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

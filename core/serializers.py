@@ -79,7 +79,7 @@ class CustomUserCreateSerializer(UserCreateSerializer):
 
     class Meta(UserCreateSerializer.Meta):
         model = User
-        fields = ("id", "username", "email", "phone", "first_name", "last_name", "PASSWORD"]
+        fields = ("id", "username", "email", "phone", "first_name", "last_name", "password")
         extra_kwargs = {
             "email": {"validators": []},
             "username": {"validators": []},
@@ -120,7 +120,7 @@ class CustomUserCreateSerializer(UserCreateSerializer):
             phone=validated_data.get("phone", None),
             first_name=validated_data.get("first_name"],
             last_name=validated_data.get("last_name"],
-            password=validated_data["password"],
+            password=validated_data["password"),
             tenant=active_tenant
         )
         return user

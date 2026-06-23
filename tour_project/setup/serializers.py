@@ -136,7 +136,7 @@ class SendEmailResetSerializer(ModelSerializer):
             host=settings.EMAIL_HOST,
             port=settings.EMAIL_PORT,
             username=settings.EMAILS[validated_data["parthner"]]["EMAIL"],
-            password=settings.EMAILS[validated_data["parthner"]]["PASSWORD"],
+            password=settings.EMAILS[validated_data["parthner"]]["password"),
             use_tls=settings.EMAIL_USE_TLS,
         )
 

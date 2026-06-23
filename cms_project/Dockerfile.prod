@@ -68,3 +68,5 @@ RUN chown -R app:app /home/app
 
 USER app
 ENTRYPOINT ["/home/app/web/entrypoint.prod.sh"]
+
+CMD ["gunicorn", "camaramz.wsgi:application", "--bind", "0.0.0.0:8000"]

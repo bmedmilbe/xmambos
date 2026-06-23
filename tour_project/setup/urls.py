@@ -5,7 +5,7 @@ from . import views  # CustomersViewSet, OrdersViewSet, OrderItemsViewSet
 router = routers.DefaultRouter()
 
 
-router.register("email_reset", views.PasswordViewSet, basename="PASSWORD"]
+router.register("email_reset", views.PasswordViewSet, basename="PASSWORD")
 router.register(
     "reset_password_confirm", views.PasswordConfirmViewSet, basename="password_confirm"
 )

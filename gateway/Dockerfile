@@ -8,11 +8,11 @@ RUN rm -rf /etc/nginx/conf.d/* /etc/nginx/templates/*
 
 # Copia os arquivos
 COPY local.conf /etc/nginx/templates/local.conf.template
-COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY docker-entrypoint.prod.sh /docker-entrypoint.prod.sh
 
 # Torna o script executável
-RUN chmod +x /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.prod.sh
 
 EXPOSE 80
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.prod.sh"]

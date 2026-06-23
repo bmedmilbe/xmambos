@@ -162,7 +162,7 @@ def api_client_a(tenant_a):
                 "tenant": tenant_a
             }
         )
-        user.set_password("PASSWORD"]
+        user.set_password("PASSWORD")
         user.save()
 
     client = APIClient()

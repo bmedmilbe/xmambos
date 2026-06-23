@@ -358,7 +358,7 @@ def set_number(current_year, type_id):
                                                        date_issue__year=current_year, number__endswith=current_year)
         if items.exists():
             items = [item for item in items.values()]
-            last_obj = sorted(items, key=lambda item: int(item['number'].replace("-"]), reverse=True)[0]
+            last_obj = sorted(items, key=lambda item: int(item['number']).replace("-"), reverse=True)[0]
     if last_obj is not None:
         return f"{int(last_obj['number'].split('-')[0]) + 1}-{current_year}"
     return f"1-{current_year}"

@@ -157,7 +157,7 @@ class AndroidGatewayViewSet(viewsets.ViewSet):
         Expected Body: {"sender": "+239995123", "text": "4f8a2b1c YES"}
         """
         request.data.get("sender")
-        incoming_text = request.data.get("text"].strip()
+        incoming_text = request.data.get("text").strip()
 
         if not incoming_text:
             return Response(

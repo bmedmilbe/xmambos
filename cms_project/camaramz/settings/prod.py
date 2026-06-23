@@ -13,9 +13,11 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'teladoshi.com',
     '*.teladoshi.com',
-    '*.railway.internal',
-    'gateway.railway.internal',
+    '*.railway.internal',  # IMPORTANTE!
     'cms.railway.internal',
+    'gateway.railway.internal',
+    '0.0.0.0',
+    '*',  # Apenas para teste - depois remova
 ]
 CSRF_TRUSTED_ORIGINS = ["https://teladoshi.com","https://*.teladoshi.com"]
 CSRF_COOKIE_DOMAIN = ".teladoshi.com"

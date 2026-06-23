@@ -1,16 +1,20 @@
 FROM nginx:alpine
 
-ARG CACHE_BYPASS=1 
-
-# 1. Limpa todas as configurações padrão para evitar conflitos
+# Limpa todas as configurações padrão
 RUN rm -rf /etc/nginx/conf.d/* /etc/nginx/templates/*
 
-# 2. Copia o local.conf para a raiz do nginx com outro nome (evita o script automático da imagem)
-COPY local.conf /etc/nginx/local.conf.template
-
+# 💡 VALORES PADRÃO (Fallbacks): Se as variáveis não existirem no painel do Railway,
+# estes valores evitam que o Nginx quebre na inicialização.
 ENV PORT=80
+ENV CMS_URL=cms.railway.internal
+ENV TOUR_URL=tour.railway.internal
+ENV REMITTANCE_URL=remittance.railway.internal
+ENV CERTIFICATE_URL=certificate.railway.internal
 
-# 3. 🚀 Força o envsubst a ler APENAS a variável $PORT e $CMS_URL, ignorando o resto para não quebrar as outras URLs
-CMD ["/bin/sh", "-c", "envsubst '\\$PORT \\$CMS_URL' < /etc/nginx/local.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
+# Copia o seu ficheiro local.conf para a raiz
+COPY local.conf /etc/nginx/nginx.conf.template
+
+# 🚀 Executa o envsubst completo em todas as variáveis do arquivo
+CMD ["/bin/sh", "-c", "envsubst < /etc/nginx/nginx.conf.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
 
 EXPOSE 80

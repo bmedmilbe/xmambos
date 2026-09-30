@@ -1,61 +1,121 @@
-# 🏛️ CamaraMZ: Centralized Multi-Tenant Government Kernel
+# 🏛️ CamaraMZ — Multi-Application Django Platform
 
-[![Python](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/)
-[![Django](https://img.shields.io/badge/django-5.0-green.svg)](https://www.djangoproject.com/)
-[![DRF](https://img.shields.io/badge/DRF-3.15-orange.svg)](https://www.django-rest-framework.org/)
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-5.0-green.svg)](https://www.djangoproject.com/)
+[![Django REST Framework](https://img.shields.io/badge/Django%20REST%20Framework-3.15-orange.svg)](https://www.django-rest-framework.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-336791.svg)](https://www.postgresql.org/)
-[![Pipenv](https://img.shields.io/badge/managed%20by-pipenv-yellow.svg)](https://pipenv.pypa.io/)
+[![Pipenv](https://img.shields.io/badge/Dependency%20Management-Pipenv-yellow.svg)](https://pipenv.pypa.io/)
 
-A production-grade **Django REST Framework API** acting as a unified kernel for government and NGO digital infrastructure. This system powers multiple organizations (Tenants) through a high-performance **Shared-Database Multi-tenant architecture**.
+CamaraMZ is a Django-based monorepo that brings together four applications within a shared backend infrastructure. The platform uses a single shared database and an NGINX reverse-proxy gateway to route incoming requests to the appropriate applications.
 
----
+Selected applications use Django Tenants to support multi-tenant functionality, while others operate without a multi-tenant architecture where it is not required.
 
-## 🎯 Project Scope: The Unified Ecosystem
+## 📋 Project Overview
 
-**CamaraMZ** is a **SaaS Kernel** built on a custom multi-tenant authentication logic originally developed in the [camaramz](https://github.com/bmedmilbe/camaramz) project.
+The platform consists of four applications:
 
-### 🏛️ Institutional Engine (CECAB & CMZ)
+### 1. CMS — Content Management System
 
-These tenants share a core infrastructure with 100% data segregation:
+A content management application that enables website administrators to manage and maintain website content.
 
-- **Unified CMS Module:** A centralized engine for institutional content, news, and media, filtered dynamically by tenant.
-- **Administrative Backoffice (Certificates App):** A specialized layer for official workflows.
-  - **CMZ (Municipality):** Automates the issuance of residency certifications and municipal declarations.
-  - **CECAB (NGO):** Tracks supply chain transparency and documentation.
-  - **Workflow:** Full document lifecycle from application to secure PDF generation.
+### 2. Remittance
 
-### 💸 Financial Settlement (Troca)
+An application for managing remittance instructions and related data for transfers from abroad to São Tomé and Príncipe.
 
-A high-security module for cross-border remittances.
+The application supports the management of remittance information but does not directly execute money transfers.
 
-- **Data Integrity:** Implements **Pessimistic Locking** to ensure atomicity.
-- **Auditability:** Full ledger tracking for agents and financial authorities.
+### 3. Tour — Tourism Marketplace
 
----
+A tourism marketplace focused on São Tomé and Príncipe, designed to promote and make tourism services and experiences available.
 
-## 🏗️ Core Engineering Principles
+### 4. Certificate — Municipal Certificate Management
 
-- **Custom Multi-Tenant Auth:** Integration of the identity logic from [camaramz](https://github.com/bmedmilbe/camaramz), enabling users to belong to specific tenants with email-based authentication.
-- **Row-Level Isolation:** Enforced via custom Middleware that identifies the organization by subdomain.
-- **Hybrid Configuration:** Environment-based settings for Dev/Prod managed via Docker.
-- **Cloud-Ready Storage:** AWS S3 integration for certificates and institutional media.
+An application for managing and issuing official certificates for Câmara Distrital de Mé-Zóchi, São Tomé and Príncipe.
 
----
+The application uses Django Tenants to support multiple district councils within the same application. It is currently implemented for Câmara Distrital de Mé-Zóchi, with the architecture allowing other councils to use the application.
 
-## 📚 Technical Documentation
+## 🏗️ Architecture
 
-1.  **[ARCHITECTURE.md](ARCHITECTURE.md)** | 2. **[SETUP.md](SETUP.md)** | 3. **[API_DOCUMENTATION.md](API_DOCUMENTATION.md)** | 4. **[APP_STRUCTURE.md](APP_STRUCTURE.md)** | 5. **[DEPLOYMENT.md](DEPLOYMENT.md)**
+The platform follows a multi-application architecture within a single repository.
 
----
+- **Four Django applications:** CMS, Remittance, Tour and Certificate.
+- **Shared database:** All four applications use a single database.
+- **Multi-tenancy:** Django Tenants is used by each applications.
+- **NGINX Gateway:** Acts as the reverse proxy and single entry point for incoming requests.
+- **Request routing:** NGINX forwards incoming requests to the appropriate application.
+- **Application access:** Users access the platform through the gateway rather than directly accessing the individual applications.
 
-## 🚀 Infrastructure Roadmap
+### Request Flow
 
-- [ ] **Nginx Reverse Proxy** | [ ] **Pytest Suite** | [ ] **Redis Caching**
+```text
+                    Users / Clients
+                           |
+                           v
+                   NGINX Gateway
+                  (Reverse Proxy)
+                           |
+             +-------------+-------------+
+             |             |             |
+             v             v             v
+           CMS        Remittance        Tour
+             |
+             |          Certificate
+             |             ^
+             +-------------+
+                           |
+                           v
+                  Shared Database
+```
 
----
+The diagram is a conceptual overview. The actual NGINX routing rules determine how requests are directed to each application, and all four applications connect to the shared database.
 
-## 👥 Authorship & Contact
+### Multi-Tenant Architecture
 
-- **Lead Engineer:** [Edmilbe Ramos](https://www.linkedin.com/in/edmilbe-ramos/)
-- **Core Auth Logic:** Developed in [camaramz](https://github.com/bmedmilbe/camaramz)
-- **Email:** bm.edmilbe@gmail.com
+Multi-tenancy is implemented selectively rather than applied across the entire platform.
+
+The Certificate application uses Django Tenants to support multiple district councils. Other applications use the architecture appropriate to their requirements.
+
+## 🛠️ Technology Stack
+
+| Technology            | Purpose                                             |
+| --------------------- | --------------------------------------------------- |
+| Python                | Backend development                                 |
+| Django                | Application framework                               |
+| Django REST Framework | REST API development                                |
+| PostgreSQL            | Shared relational database                          |
+| Django Tenants        | Multi-tenant functionality in selected applications |
+| NGINX                 | Reverse proxy and request routing                   |
+| Pipenv                | Python dependency management                        |
+
+## 📁 Repository Structure
+
+The repository contains four Django applications within a single codebase:
+
+- CMS
+- Remittance
+- Tour
+- Certificate
+
+Each application provides a distinct area of functionality while sharing the platform's database and infrastructure.
+
+## 🚀 Getting Started
+
+To run the project locally:
+
+1. Clone the repository.
+2. Install the project dependencies using Pipenv.
+3. Configure the required environment variables.
+4. Configure the shared database connection.
+5. Apply the database migrations.
+6. Start the Django applications.
+7. Configure and start NGINX as the gateway.
+
+Refer to the project's configuration files and deployment setup for the exact commands and environment variables.
+
+## 👨‍💻 Author
+
+**Edmilbe Ramos** — Python Backend Developer
+
+- [GitHub](https://github.com/bmedmilbe)
+- [LinkedIn](https://www.linkedin.com/in/edmilbe-ramos/)
+- Email: bm.edmilbe@gmail.com

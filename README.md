@@ -51,20 +51,19 @@ The platform follows a multi-application architecture within a single repository
                     Users / Clients
                            |
                            v
-                   NGINX Gateway
-                  (Reverse Proxy)
+                        gateway
+                    (NGINX Proxy)
                            |
-             +-------------+-------------+
-             |             |             |
-             v             v             v
-           CMS        Remittance        Tour
-             |
-             |          Certificate
-             |             ^
-             +-------------+
-                           |
-                           v
-                  Shared Database
+       +-------------------+-------------------+-------------------+
+       |                   |                   |                   |
+       v                   v                   v                   v
+      cms              remittance             tour            certificate
+       |                   |                   |                   |
+       +-------------------+---------+---------+-------------------+
+                                     |
+                                     v
+                                 Postgres
+                           [postgres-volume]
 ```
 
 The diagram is a conceptual overview. The actual NGINX routing rules determine how requests are directed to each application, and all four applications connect to the shared database.
